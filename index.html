@@ -6,8 +6,6 @@
 	<title></title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-
-
 <style>
 	/* app css stylesheet */
     body, html {
@@ -47,26 +45,109 @@
 	    stroke-width: 1.5px;
 	}
 </style>
-
 </head>
+
 <body>
 
-<h1>Hello</h1>
+<div class="container">
+	<h1>Hello</h1>
 
-<div class="columns large-12 ng-scope" ng-controller="MainCtrl">	
-	<d3-bars
-	    bar-height="20" 
-	    bar-padding="3" 
-	    data="data" 
-	    class="ng-isolate-scope">
-	</d3-bars>
+	<div ng-controller="ClockCtrl">
+	   <span>Formato:</span> <input ng-model="format"> <span>Data:</span> <span clock-direct="format"></span> 
+	</div>
+</div>
+<br>
+<div class="container">
+	<div class="columns large-12 ng-scope" ng-controller="MainCtrl">	
+		<d3-bars
+		    bar-height="20" 
+		    bar-padding="3" 
+		    data="data" 
+		    class="ng-isolate-scope">
+		</d3-bars>
+	</div>
 </div>
 
-<div ng-controller="ClockCtrl">
-   Formato: <input ng-model="format">
-   <hr>
-   Data: <span clock-direct="format"></span> 
-</div>
+
+
+<!--  -->
+<!--  -->
+<style>
+	body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #fff;
+  width: 960px;
+  height: 700px;
+  margin-top: 10px;
+}
+
+#main {
+  float: left;
+  width: 750px;
+}
+
+#sidebar {
+  float: right;
+  width: 100px;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 260px;
+  left: 305px;
+  width: 140px;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+}
+
+#percentage {
+  font-size: 2.5em;
+}
+
+</style>
+    <div id="main">
+      <div id="sequence"></div>
+      <div id="chart">
+        <div id="explanation" style="visibility: hidden;">
+          <span id="percentage"></span><br/>
+          of visits begin with this sequence of pages
+        </div>
+      </div>
+    </div>
+    <div id="sidebar">
+      <input type="checkbox" id="togglelegend"> Legend<br/>
+      <div id="legend" style="visibility: hidden;"></div>
+    </div>
+<script src="http://d3js.org/d3.v3.js"></script>    
+<script type="text/javascript" src="sequences.js"></script>
+<!--  -->
+<!--  -->
+
 
 
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -74,6 +155,6 @@
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="d3service.js"></script>
 	<script src="index.js"></script>
-
+    
 </body>
 </html>
