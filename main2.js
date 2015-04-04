@@ -1,8 +1,14 @@
-angular.module('d3AngularApp', ['d3'])
+/*angular.module('d3AngularApp', ['d3serviceMod'])
+  .controller('MainCtrl', ['$scope', function($scope){
+    $scope.greeting = "Resize the page to see the re-rendering";
+    $scope.data = [
+      {name: "A", score: 98},
+    ];
+  }])
 .directive('d3Bars', ['$window', '$timeout', 'd3Service', 
   function($window, $timeout, d3Service) {
     return {
-      restrict: 'A',
+      restrict: 'E',
       scope: {
         data: '=',
         label: '@',
@@ -18,7 +24,7 @@ angular.module('d3AngularApp', ['d3'])
 
           var svg = d3.select(ele[0])
             .append('svg')
-            .style('width', '100%');
+            .attr('width', 800);
 
           $window.onresize = function() {
             scope.$apply();
@@ -77,6 +83,7 @@ angular.module('d3AngularApp', ['d3'])
                 .data(data)
                 .enter()
                   .append('text')
+                  .classed('bar-label', true)
                   .attr('fill', '#fff')
                   .attr('y', function(d,i) {
                     return i * (barHeight + barPadding) + 15;
@@ -88,5 +95,28 @@ angular.module('d3AngularApp', ['d3'])
             }, 200);
           };
         });
-      }}
-}])
+      }};
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
