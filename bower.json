@@ -5,7 +5,7 @@
     "Jose Moraes <elvano@gmail.com>"
   ],
   "description": "yet another d3 usage via angular directives",
-  "main": "ndex.js",
+  "main": "index.js",
   "moduleType": [
     "amd"
   ],
