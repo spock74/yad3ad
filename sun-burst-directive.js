@@ -33,12 +33,12 @@ angular.module('d3AngularApp')
 
           // Mapping of step names to colors.
           var colors = {
-            "home": "#5687d1",
+            "home":    "#5687d1",
             "product": "#7b615c",
-            "search": "#de783b",
+            "search":  "#de783b",
             "account": "#6ab975",
-            "other": "#a173d1",
-            "end": "#bbbbbb"
+            "other":   "#a173d1",
+            "end":     "#bbbbbb"
           };
 
           // Total size of all segments; we set this later, after loading the data.
