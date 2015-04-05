@@ -1,11 +1,11 @@
 {
-  "name": "angular-d3",
+  "name": "yad3ad",
   "version": "0.0.0",
   "authors": [
     "Jose Moraes <elvano@gmail.com>"
   ],
-  "description": "yet to be described",
-  "main": "d3-example1.js",
+  "description": "yet another d3 usage via angular directives",
+  "main": "ndex.js",
   "moduleType": [
     "amd"
   ],
@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "angular": "~1.3.15",
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.4",
+    "d3": "~3.5.5"
   }
 }
