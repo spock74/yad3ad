@@ -10,6 +10,7 @@ angular.module('d3AngularApp')
     function($window, d3Service){
         return {
         restrict: 'E',
+        templateUrl: 'tmpl.html',
         scope: {
           data: '=',
           label: '@',
@@ -21,6 +22,35 @@ angular.module('d3AngularApp')
           // Here goes all d3 usage stuff
           // ...
           var elemento = ele[0];
+          // construct the html tree with correct id's
+          /*
+          d:main 
+              d:sequence 
+              d:chart 
+                  d:explanation 
+                      s:percentage 
+          d:sidebar
+              i:togglelegend
+              d:legend
+          */
+/*          d3.select(elemento)
+            .append('div')
+            .attr('id', '_main')
+            .append('div')
+            .attr('id', '_sequence');*/
+          
+
+ /*             .attr('id', '_sequence')
+            .append('div')
+            .attr('id', '_chart')
+            .enter()
+            .append('div')
+            .attr('id', '_explanation')
+            .enter()
+            .append('div')
+            .atrr('id', '_percentage');*/
+
+
           // Dimensions of sunburst.
           var width = 750;
           var height = 600;
@@ -44,7 +74,8 @@ angular.module('d3AngularApp')
           // Total size of all segments; we set this later, after loading the data.
           var totalSize = 0; 
 
-          var vis = d3.select(elemento).append('div').attr('id', 'chart')
+          //var vis = d3.select(elemento).append('div').attr('id', 'chart')
+            var vis = d3.select('#main')
               .append("svg:svg")
               .attr("width", width)
               .attr("height", height)
